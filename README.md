@@ -2,10 +2,10 @@
 application de gestion statistiques d'une équipe de handball à l'intention des coachs.
 
 ## Use Case :
-###En tant qu'Admin je peux :
+### En tant qu'Admin je peux :
   * gérer le back-office global de l'application. 
 
-###En tant que Caoch d'une équipe je peux : 
+### En tant que Caoch d'une équipe je peux : 
   * consulter les statistiques de mes joueurs par match / période / saison.
   * consulter les statistiques de mon équipe par match / période / saison.
   * planifier les matchs de mon équipe.
@@ -13,7 +13,7 @@ application de gestion statistiques d'une équipe de handball à l'intention des
   * envoyer un mail de convocation au matchs aux joueurs de la liste.
   * compléter les statistiques de match de mon équipe aprés l'avoir joué.
   
-###En tant que Joueur d'une équipe je peux :
+### En tant que Joueur d'une équipe je peux :
   * consulter les statistiques de mon équipe.
   * consulter mes statistiques personnelles.
   
