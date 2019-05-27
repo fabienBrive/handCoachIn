@@ -23,12 +23,6 @@ class Player
      * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank
      */
-    private $fullname;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank
-     */
     private $lastname;
 
     /**
@@ -76,6 +70,11 @@ class Player
      */
     private $team;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Match", inversedBy="playerlist")
+     */
+    private $matchlist;
+
     public function __construct()
     {
         $this->team = new ArrayCollection();
@@ -84,18 +83,6 @@ class Player
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFullname(): ?string
-    {
-        return $this->fullname;
-    }
-
-    public function setFullname(): self
-    {
-        $this->fullname = $this->getFirstname . ' ' . $this->getLastname;
-
-        return $this;
     }
 
     public function getLastname(): ?string
@@ -234,6 +221,18 @@ class Player
 
     public function __toString()
     {
-        return $this->fullname;
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
+    public function getMatchlist(): ?Match
+    {
+        return $this->matchlist;
+    }
+
+    public function setMatchlist(?Match $matchlist): self
+    {
+        $this->matchlist = $matchlist;
+
+        return $this;
     }
 }

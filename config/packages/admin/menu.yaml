@@ -1,0 +1,6 @@
+easy_admin:
+    design:
+        menu:  
+            - {entity: 'Team', icon: 'team'}
+            - {entity: 'Player', icon: 'player'}
+              

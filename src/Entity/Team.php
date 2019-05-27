@@ -44,6 +44,11 @@ class Team
      */
     private $players;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Coach", mappedBy="team", cascade={"persist", "remove"})
+     */
+    private $coach;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
@@ -133,5 +138,23 @@ class Team
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getCoach(): ?Coach
+    {
+        return $this->coach;
+    }
+
+    public function setCoach(?Coach $coach): self
+    {
+        $this->coach = $coach;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newTeam = $coach === null ? null : $this;
+        if ($newTeam !== $coach->getTeam()) {
+            $coach->setTeam($newTeam);
+        }
+
+        return $this;
     }
 }
