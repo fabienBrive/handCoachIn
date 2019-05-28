@@ -13,7 +13,7 @@ class PlayerFixtures extends Fixture
     {
         $faker = Faker::create('fr_FR');
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $player = new Player();
 
             // creation aléatoire de donnees grâce à faker

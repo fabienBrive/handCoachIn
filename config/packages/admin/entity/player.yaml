@@ -1,7 +1,0 @@
-easy_admin:
-    entities:
-        player:
-            class: 'App/Entity/Player'
-            form:
-                fields:
-                    - {}

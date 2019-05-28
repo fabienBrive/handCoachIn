@@ -1,2 +1,5 @@
-imports:
-  - {resource: admin/}
+easy_admin:
+    entities:
+        - App\Entity\Team
+        - App\Entity\Player
+        - App\Entity\Coach

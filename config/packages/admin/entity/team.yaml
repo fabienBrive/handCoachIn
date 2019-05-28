@@ -1,7 +1,0 @@
-easy_admin:
-    entities:
-        team:
-            class: 'App/Entity/Team'
-            form:
-                fields:
-                    - {}
