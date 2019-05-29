@@ -18,8 +18,6 @@ class DefaultController extends AbstractController
 
         var_dump($teams);
 
-        return $this->render('default/index.html.twig', [
-            'teams' => $teams,
-        ]);
+        return $this->render('default/index.html.twig');
     }
 }
