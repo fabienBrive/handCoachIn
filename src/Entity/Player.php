@@ -2,10 +2,7 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PlayerRepository")
@@ -21,14 +18,13 @@ class Player
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank
      */
-    private $lastname;
+    private $firstName;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $firstname;
+    private $lastName;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -36,9 +32,19 @@ class Player
     private $number;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $birthdate;
+    private $email;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $position;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photo;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -50,18 +56,104 @@ class Player
      */
     private $seniority;
 
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private $position;
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $mail;
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $photo;
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(?int $number): self
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    public function setAge(?int $age): self
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    public function getSeniority(): ?int
+    {
+        return $this->seniority;
+    }
+
+    public function setSeniority(?int $seniority): self
+    {
+        $this->seniority = $seniority;
+
+        return $this;
+    }
 }

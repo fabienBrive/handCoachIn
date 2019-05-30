@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-use App\Entity\Team;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,12 +11,6 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        $teams = $this->getDoctrine()
-            ->getRepository(Team::class)
-            ->findLatest();
-
-        var_dump($teams);
-
-        return $this->render('default/index.html.twig');
+        return $this->render('index.html.twig');
     }
 }
